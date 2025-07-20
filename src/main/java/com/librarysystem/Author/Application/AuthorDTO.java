@@ -1,9 +1,12 @@
 package com.librarysystem.Author.Application;
 
+import com.librarysystem.Book.Application.BookDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,5 +15,5 @@ import lombok.NoArgsConstructor;
 public class AuthorDTO {
     private Long id;
     private String name;
-    private String books;
+    private Set<BookDTO> books;
 }
