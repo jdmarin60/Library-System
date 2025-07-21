@@ -1,5 +1,7 @@
 package com.librarysystem.Book.Infrastructure;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.librarysystem.Author.Infrastructure.AuthorEntity;
 import com.librarysystem.BookCopy.Infrastructure.BookCopyEntity;
 import jakarta.persistence.*;
@@ -37,6 +39,7 @@ public class BookEntity {
             inverseJoinColumns = @JoinColumn(name = "author_id")
     )
     @Builder.Default
-    private Set<AuthorEntity> authors = new HashSet<>();
+    @JsonIgnore
+    private List<AuthorEntity> authors = new ArrayList<>();
     //private static final long serialVersionUID = 1L;
 }
