@@ -1,8 +1,8 @@
-package com.librarysystem.loan.Infrastructure;
+package com.librarysystem.loan.infrastructure;
 
 import com.librarysystem.author.infrastructure.AuthorEntityMapper;
 import com.librarysystem.book.infrastructure.BookEntityMapper;
-import com.librarysystem.loan.Domain.Loan;
+import com.librarysystem.loan.domain.Loan;
 import org.mapstruct.Mapper;
 
 import java.util.List;

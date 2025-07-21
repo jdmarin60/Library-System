@@ -2,7 +2,7 @@ package com.librarysystem.bookcopy.application;
 
 import com.librarysystem.book.application.BookDTO;
 
-import com.librarysystem.loan.Application.LoanDTO;
+import com.librarysystem.loan.application.LoanDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

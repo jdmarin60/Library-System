@@ -1,4 +1,4 @@
-package com.librarysystem.loan.Application;
+package com.librarysystem.loan.application;
 
 import java.util.List;
 import java.util.Optional;

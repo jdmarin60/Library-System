@@ -1,4 +1,4 @@
-package com.librarysystem.loan.Domain;
+package com.librarysystem.loan.domain;
 
 import com.librarysystem.bookcopy.domain.BookCopy;
 import com.librarysystem.user.domain.User;

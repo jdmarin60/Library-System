@@ -1,6 +1,6 @@
 package com.librarysystem.user.infrastructure;
 
-import com.librarysystem.loan.Infrastructure.LoanEntityMapper;
+import com.librarysystem.loan.infrastructure.LoanEntityMapper;
 import com.librarysystem.user.domain.User;
 import org.mapstruct.Mapper;
 

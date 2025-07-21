@@ -1,7 +1,7 @@
 package com.librarysystem.bookcopy.domain;
 
 import com.librarysystem.book.domain.Book;
-import com.librarysystem.loan.Domain.Loan;
+import com.librarysystem.loan.domain.Loan;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

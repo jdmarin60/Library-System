@@ -1,9 +1,9 @@
-package com.librarysystem.loan.Infrastructure.Repository;
+package com.librarysystem.loan.infrastructure.Repository;
 
-import com.librarysystem.loan.Domain.Loan;
-import com.librarysystem.loan.Domain.LoanRepository;
-import com.librarysystem.loan.Infrastructure.LoanEntity;
-import com.librarysystem.loan.Infrastructure.LoanEntityMapper;
+import com.librarysystem.loan.domain.Loan;
+import com.librarysystem.loan.domain.LoanRepository;
+import com.librarysystem.loan.infrastructure.LoanEntity;
+import com.librarysystem.loan.infrastructure.LoanEntityMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

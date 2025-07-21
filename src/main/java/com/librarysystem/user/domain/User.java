@@ -1,6 +1,6 @@
 package com.librarysystem.user.domain;
 
-import com.librarysystem.loan.Domain.Loan;
+import com.librarysystem.loan.domain.Loan;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package com.librarysystem.loan.Web;
+package com.librarysystem.loan.web;
 
-import com.librarysystem.loan.Application.LoanDTO;
-import com.librarysystem.loan.Application.LoanService;
+import com.librarysystem.loan.application.LoanDTO;
+import com.librarysystem.loan.application.LoanService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

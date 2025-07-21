@@ -1,9 +1,9 @@
-package com.librarysystem.loan.Application;
+package com.librarysystem.loan.application;
 
 import com.librarysystem.author.application.AuthorSummaryMapper;
 import com.librarysystem.book.application.BookSummaryMapper;
 import com.librarysystem.bookcopy.application.BookCopyDTOMapper;
-import com.librarysystem.loan.Domain.Loan;
+import com.librarysystem.loan.domain.Loan;
 import com.librarysystem.user.application.UserDTOMapper;
 import org.mapstruct.Mapper;
 

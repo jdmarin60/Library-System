@@ -1,4 +1,4 @@
-package com.librarysystem.loan.Domain;
+package com.librarysystem.loan.domain;
 
 import java.util.List;
 import java.util.Optional;

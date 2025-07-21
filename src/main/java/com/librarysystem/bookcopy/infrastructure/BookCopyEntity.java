@@ -1,7 +1,7 @@
 package com.librarysystem.bookcopy.infrastructure;
 
 import com.librarysystem.book.infrastructure.BookEntity;
-import com.librarysystem.loan.Infrastructure.LoanEntity;
+import com.librarysystem.loan.infrastructure.LoanEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

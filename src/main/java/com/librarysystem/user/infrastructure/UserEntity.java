@@ -1,6 +1,6 @@
 package com.librarysystem.user.infrastructure;
 
-import com.librarysystem.loan.Infrastructure.LoanEntity;
+import com.librarysystem.loan.infrastructure.LoanEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

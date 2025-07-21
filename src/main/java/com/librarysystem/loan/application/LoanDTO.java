@@ -1,4 +1,4 @@
-package com.librarysystem.loan.Application;
+package com.librarysystem.loan.application;
 
 import com.librarysystem.bookcopy.application.BookCopyDTO;
 import com.librarysystem.user.application.UserDTO;

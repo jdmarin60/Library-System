@@ -1,4 +1,4 @@
-package com.librarysystem.loan.Infrastructure;
+package com.librarysystem.loan.infrastructure;
 
 import com.librarysystem.bookcopy.infrastructure.BookCopyEntity;
 import com.librarysystem.user.infrastructure.UserEntity;
