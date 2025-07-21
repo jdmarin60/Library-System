@@ -7,8 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "authors")
@@ -23,6 +23,6 @@ public class AuthorEntity {
     private String name;
     @ManyToMany(mappedBy = "authors")
     @Builder.Default
-    private Set<BookEntity> books = new HashSet<>();
+    private List<BookEntity> books = new ArrayList<>();
     //private static final long serialVersionUID = 1L;
 }

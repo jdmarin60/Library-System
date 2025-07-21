@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface AuthorService {
-    AuthorDTO createAuthor(AuthorDTO authorDTO);
+    AuthorDTO createAuthor(CreateAuthorDTO createAuthorDTO);
 
     Optional<AuthorDTO> getAuthorById(Long id);
 
