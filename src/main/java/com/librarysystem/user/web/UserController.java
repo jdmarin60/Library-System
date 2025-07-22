@@ -1,5 +1,6 @@
 package com.librarysystem.user.web;
 
+import com.librarysystem.user.application.CreateUserDTO;
 import com.librarysystem.user.application.UserDTO;
 import com.librarysystem.user.application.UserService;
 import lombok.RequiredArgsConstructor;
@@ -15,9 +16,9 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
 
-    @PostMapping
-    public ResponseEntity<UserDTO> create(@RequestBody UserDTO userDTO) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(userService.createAuthor(userDTO));
+    @PostMapping("/register")
+    public ResponseEntity<UserDTO> create(@RequestBody CreateUserDTO createUserDTO) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(userService.createAuthor(createUserDTO));
     }
 
     @GetMapping("/{id}")

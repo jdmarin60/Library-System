@@ -9,3 +9,6 @@ spring:
       ddl-auto: update
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
+jwt:
+  secret: U2VjdXJlS2V5U2hvdWxkQmVFdmVuTG9uZ2VyVGhhblRoaXM=
+  expiration: 3600000

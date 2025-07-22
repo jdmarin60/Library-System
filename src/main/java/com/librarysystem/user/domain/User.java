@@ -1,6 +1,7 @@
 package com.librarysystem.user.domain;
 
 import com.librarysystem.loan.domain.Loan;
+import com.librarysystem.security.domain.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +17,9 @@ public class User {
     private Long id;
     private String name;
     private String email;
+    private String password;
     private String libraryId;
-    private String role;
+    private Role role;
+    private boolean enabled;
     private List<Loan> borrowedBooks;
 }

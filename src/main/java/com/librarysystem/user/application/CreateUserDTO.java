@@ -1,25 +1,21 @@
 package com.librarysystem.user.application;
 
-import com.librarysystem.loan.application.LoanDTO;
 import com.librarysystem.security.domain.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder(toBuilder = true)
-public class UserDTO {
-    private Long id;
+public class CreateUserDTO {
     private String name;
     private String email;
     private String password;
-    private Role role;
-    private boolean enabled;
     private String libraryId;
-    private List<LoanDTO> borrowedBooks;
+    private Role role;
+    @Builder.Default
+    private boolean enabled = true; // Default value set to true
 }

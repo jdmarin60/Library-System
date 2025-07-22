@@ -1,6 +1,7 @@
 package com.librarysystem.user.infrastructure;
 
 import com.librarysystem.loan.infrastructure.LoanEntity;
+import com.librarysystem.security.domain.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,8 +22,11 @@ public class UserEntity {
     private Long id;
     private String name;
     private String email;
+    private String password;
     private String libraryId;
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
+    private boolean enabled;
     @OneToMany(mappedBy = "user")
     private List<LoanEntity> borrowedBooks;
 
