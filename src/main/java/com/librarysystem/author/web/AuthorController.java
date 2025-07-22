@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/authors")
+@PreAuthorize("hasRole('ADMIN')")
 @RequiredArgsConstructor
 @Tag(name = "Author", description = "Operations related to authors")
 public class AuthorController {
@@ -31,7 +32,7 @@ public class AuthorController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping
     public ResponseEntity<List<AuthorDTO>> getAll() {
         return ResponseEntity.ok(authorService.getAllAuthors());

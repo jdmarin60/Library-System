@@ -5,12 +5,14 @@ import com.librarysystem.book.application.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/books")
+@PreAuthorize("hasRole('ADMIN')")
 @RequiredArgsConstructor
 public class BookController {
     private final BookService bookService;
@@ -20,6 +22,7 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.CREATED).body(bookService.createBook(bookDTO));
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/{id}")
     public ResponseEntity<BookDTO> getById(@PathVariable Long id) {
         return bookService.getBookById(id)
@@ -27,6 +30,7 @@ public class BookController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping
     public ResponseEntity<List<BookDTO>> getAll() {
         return ResponseEntity.ok(bookService.getAllBooks());
