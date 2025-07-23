@@ -1,7 +1,7 @@
 package com.librarysystem.bookcopy.domain;
 
 import com.librarysystem.book.domain.Book;
-import com.librarysystem.loan.domain.Loan;
+import com.librarysystem.loan.domain.LoanSummary;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,5 +17,5 @@ public class BookCopy {
     private Long id;
     private String barcode; // Unique ID for the physical copy
     private Book book;
-    private List<Loan> loans;
+    private List<LoanSummary> loans;
 }

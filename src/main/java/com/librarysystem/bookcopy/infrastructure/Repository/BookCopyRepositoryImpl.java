@@ -14,7 +14,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class BookCopyRepositoryImpl implements BookCopyRepository {
 
-    private final BookCopyRepositoryJPA authorRepository;
+    private final BookCopyRepositoryJPA bookCopyRepository;
     private final BookCopyEntityMapper bookCopyEntityMapper;
 
     @Override
@@ -23,25 +23,25 @@ public class BookCopyRepositoryImpl implements BookCopyRepository {
             return null;
         }
         BookCopyEntity bookCopyEntity = bookCopyEntityMapper.toEntity(bookCopy);
-    return bookCopyEntityMapper.toDomain(authorRepository.save(bookCopyEntity));
+    return bookCopyEntityMapper.toDomain(bookCopyRepository.save(bookCopyEntity));
     }
 
     @Override
     public Optional<BookCopy> findById(Long id) {
-        return authorRepository.findById(id)
+        return bookCopyRepository.findById(id)
                 .map(bookCopyEntityMapper::toDomain);
     }
 
     @Override
     public List<BookCopy> findAll() {
-        return authorRepository.findAll().stream()
+        return bookCopyRepository.findAll().stream()
                 .map(bookCopyEntityMapper::toDomain)
                 .toList();
     }
 
     @Override
     public void deleteById(Long id) {
-        authorRepository.deleteById(id);
+        bookCopyRepository.deleteById(id);
     }
 
     @Override

@@ -1,8 +1,10 @@
 package com.librarysystem.loan.application;
 
 import com.librarysystem.bookcopy.application.BookCopyDTO;
+import com.librarysystem.bookcopy.domain.BookCopySummary;
 import com.librarysystem.user.application.UserDTO;
 
+import com.librarysystem.user.domain.UserSummary;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +21,8 @@ public class LoanDTO {
     private Date loanDate;
     private Date   dueDate;
     private Date   returnedDate;
-    private UserDTO user;
-    private BookCopyDTO bookCopy;
+    @Builder.Default
+    private UserSummary user = new UserSummary();
+    @Builder.Default
+    private BookCopySummary bookCopySummary = new BookCopySummary();
 }

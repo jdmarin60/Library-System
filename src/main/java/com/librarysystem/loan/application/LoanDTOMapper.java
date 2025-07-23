@@ -6,6 +6,7 @@ import com.librarysystem.bookcopy.application.BookCopyDTOMapper;
 import com.librarysystem.loan.domain.Loan;
 import com.librarysystem.user.application.UserDTOMapper;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
@@ -16,6 +17,8 @@ import java.util.List;
         AuthorSummaryMapper.class
 })
 public interface LoanDTOMapper {
+    @Mapping(target = "user", ignore = true)
+    @Mapping(target = "bookCopy", ignore = true)
     LoanDTO toDTO(Loan loan);
 
     Loan toDomain(LoanDTO loanDTO);

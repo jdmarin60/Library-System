@@ -8,6 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,10 +26,12 @@ public class BookCopyEntity {
 
     @ManyToOne
     @JoinColumn(name = "book_id")
-    private BookEntity book;
+    @Builder.Default
+    private BookEntity book = new BookEntity();
 
     @OneToMany(mappedBy = "bookCopy")
-    private List<LoanEntity> loans;
+    @Builder.Default
+    private List<LoanEntity> loans = new ArrayList<>();
 
     //private static final long serialVersionUID = 1L;
 }

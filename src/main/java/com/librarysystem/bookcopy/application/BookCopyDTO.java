@@ -1,13 +1,13 @@
 package com.librarysystem.bookcopy.application;
 
-import com.librarysystem.book.application.BookDTO;
-
-import com.librarysystem.loan.application.LoanDTO;
+import com.librarysystem.book.domain.BookSummary;
+import com.librarysystem.loan.domain.LoanSummary;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -17,6 +17,8 @@ import java.util.List;
 public class BookCopyDTO {
     private Long id;
     private String barcode; // Unique ID for the physical copy
-    private BookDTO book;
-    private List<LoanDTO> loans;
+    @Builder.Default
+    private BookSummary book = new BookSummary();
+    @Builder.Default
+    private List<LoanSummary> loans = new ArrayList<>();
 }

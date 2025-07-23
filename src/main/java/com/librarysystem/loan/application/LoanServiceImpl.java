@@ -2,6 +2,10 @@ package com.librarysystem.loan.application;
 
 import com.librarysystem.loan.domain.Loan;
 import com.librarysystem.loan.domain.LoanRepository;
+import com.librarysystem.notification.domain.Notification;
+import com.librarysystem.notification.domain.NotificationService;
+import com.librarysystem.user.application.UserDTO;
+import com.librarysystem.user.application.UserDTOMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +18,8 @@ public class LoanServiceImpl implements LoanService {
 
     private final LoanRepository loanRepository;
     private final LoanDTOMapper loanDTOMapper;
+    private final UserDTOMapper userDTOMapper;
+    private  final NotificationService notificationService;
 
     @Override
     public LoanDTO createAuthor(LoanDTO loanDTO) {
@@ -37,6 +43,26 @@ public class LoanServiceImpl implements LoanService {
                 .map(loanDTOMapper::toDTO)
                 .toList();
     }
+
+    @Override
+    public List<UserDTO> getOverdueUsers() {
+        return List.of();
+    }
+
+//    @Override
+//    public List<UserDTO> getOverdueUsers() {
+//        List<UserDTO> overdueUsers = loanRepository.getOverdueUsers().stream()
+//                .map(Loan::getUser)
+//                .distinct()
+//                .map(userDTOMapper::toDTO)
+//                .toList();
+//
+//        for (UserDTO user : overdueUsers) {
+//            Notification notification = new Notification("You have overdue books. Please return them as soon as possible.");
+//            notificationService.send(notification);
+//        }
+//        return overdueUsers;
+//    }
 
     @Override
     public LoanDTO updateAuthor(Long id, LoanDTO loanDTO) {

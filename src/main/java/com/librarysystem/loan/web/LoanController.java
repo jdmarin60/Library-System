@@ -2,6 +2,7 @@ package com.librarysystem.loan.web;
 
 import com.librarysystem.loan.application.LoanDTO;
 import com.librarysystem.loan.application.LoanService;
+import com.librarysystem.user.application.UserDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,12 @@ public class LoanController {
     @PostMapping
     public ResponseEntity<LoanDTO> create(@RequestBody LoanDTO loanDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(loanService.createAuthor(loanDTO));
+    }
+
+    @GetMapping("/overdue")
+    public ResponseEntity<List<UserDTO>> getOverdueUsers() {
+        List<UserDTO> users = loanService.getOverdueUsers();
+        return ResponseEntity.ok(users);
     }
 
     @GetMapping("/{id}")

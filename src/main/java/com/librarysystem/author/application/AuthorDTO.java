@@ -17,5 +17,5 @@ public class AuthorDTO {
     private Long id;
     private String name;
     @Builder.Default
-    private List<BookSummary> books = new ArrayList<>();;
+    private List<BookSummary> books = new ArrayList<>();
 }

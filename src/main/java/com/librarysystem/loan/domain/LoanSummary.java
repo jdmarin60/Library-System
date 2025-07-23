@@ -1,7 +1,5 @@
 package com.librarysystem.loan.domain;
 
-import com.librarysystem.bookcopy.domain.BookCopySummary;
-import com.librarysystem.user.domain.UserSummary;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,13 +11,9 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 @Builder(toBuilder = true)
-public class Loan {
+public class LoanSummary {
     private Long id;
     private Date loanDate;
     private Date   dueDate;
     private Date   returnedDate;
-    @Builder.Default
-    private UserSummary user = new UserSummary();
-    @Builder.Default
-    private BookCopySummary bookCopy = new BookCopySummary();
 }

@@ -23,10 +23,14 @@ public class LoanEntity {
     private Date   loanDate;
     private Date   dueDate;
     private Date   returnedDate;
+
     @ManyToOne(optional = false)
-    private UserEntity user;
+    @Builder.Default
+    private UserEntity user = new UserEntity();
+
     @ManyToOne(optional = false)
-    private BookCopyEntity bookCopy;
+    @Builder.Default
+    private BookCopyEntity bookCopy = new BookCopyEntity();
 
     //private static final long serialVersionUID = 1L;
 }

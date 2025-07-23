@@ -1,15 +1,18 @@
 package com.librarysystem.bookcopy.infrastructure;
 
-import com.librarysystem.author.infrastructure.AuthorEntityMapper;
-import com.librarysystem.book.infrastructure.BookEntityMapper;
+import com.librarysystem.book.infrastructure.BookSummaryEntityMapper;
 import com.librarysystem.bookcopy.domain.BookCopy;
+import com.librarysystem.loan.infrastructure.LoanSummaryEntityMapper;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
 
-@Mapper(componentModel = "spring", uses = { BookEntityMapper.class, AuthorEntityMapper.class})
+@Mapper(componentModel = "spring", uses = { BookSummaryEntityMapper.class, LoanSummaryEntityMapper.class})
 public interface BookCopyEntityMapper {
+    @Mapping(target = "book", ignore = true)
+    @Mapping(target = "loans", ignore = true)
     BookCopyEntity toEntity(BookCopy bookCopy);
 
     BookCopy toDomain(BookCopyEntity bookCopyEntity);
