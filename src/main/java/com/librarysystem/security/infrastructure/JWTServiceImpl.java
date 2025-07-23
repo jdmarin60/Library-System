@@ -1,9 +1,11 @@
 package com.librarysystem.security.infrastructure;
 
+import com.librarysystem.config.JWTTokenProperties;
 import com.librarysystem.security.domain.interfaces.JWTService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -13,18 +15,16 @@ import java.util.Date;
 import java.util.function.Function;
 
 @Service
+@RequiredArgsConstructor
 public class JWTServiceImpl implements JWTService {
-    @Value("${jwt.secret}")
-    private String secret;
 
-    @Value("${jwt.expiration}")
-    private long expiration;
+    private final JWTTokenProperties jwtTokenProperties;
 
     private Key key;
 
     @PostConstruct
     public void init() {
-        this.key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+        this.key = Keys.hmacShaKeyFor(jwtTokenProperties.getSecret().getBytes(StandardCharsets.UTF_8));
     }
 
     @Override
@@ -32,7 +32,7 @@ public class JWTServiceImpl implements JWTService {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + expiration))
+                .setExpiration(new Date(System.currentTimeMillis() + jwtTokenProperties.getExpiration()))
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
     }
