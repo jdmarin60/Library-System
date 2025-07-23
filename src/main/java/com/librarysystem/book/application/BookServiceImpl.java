@@ -3,6 +3,7 @@ package com.librarysystem.book.application;
 import com.librarysystem.book.domain.Book;
 import com.librarysystem.book.domain.BookRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class BookServiceImpl implements BookService {
                 .map(bookDTOMapper::toDTO);
     }
 
+    @Cacheable(value = "books")
     @Override
     public List<BookDTO> getAllBooks() {
         return bookRepository.findAll().stream()

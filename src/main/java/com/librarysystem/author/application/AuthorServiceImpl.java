@@ -3,6 +3,7 @@ package com.librarysystem.author.application;
 import com.librarysystem.author.domain.Author;
 import com.librarysystem.author.domain.AuthorRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class AuthorServiceImpl  implements  AuthorService {
                 .map(authorDTOMapper::toDTO);
     }
 
+    @Cacheable(value = "authors")
     @Override
     public List<AuthorDTO> getAllAuthors() {
         return authorRepository.findAll().stream()
