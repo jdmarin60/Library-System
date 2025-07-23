@@ -7,10 +7,10 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface BookCopySummaryEntityMapper {
 
-    @Mapping(target = "books", ignore = true)
-    @Mapping(target = "loans", ignore = true)
     BookCopySummary toDomain(BookCopyEntity bookCopyEntity);
 
+    @Mapping(target = "book", ignore = true)
+    @Mapping(target = "loans", ignore = true)
     BookCopyEntity toEntity(BookCopySummary bookCopySummary);
 
 

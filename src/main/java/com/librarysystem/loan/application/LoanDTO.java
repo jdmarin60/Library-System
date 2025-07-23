@@ -24,5 +24,5 @@ public class LoanDTO {
     @Builder.Default
     private UserSummary user = new UserSummary();
     @Builder.Default
-    private BookCopySummary bookCopySummary = new BookCopySummary();
+    private BookCopySummary bookCopy = new BookCopySummary();
 }

@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-@PreAuthorize("hasRole('ADMIN')")
+//@PreAuthorize("hasRole('ADMIN')")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;

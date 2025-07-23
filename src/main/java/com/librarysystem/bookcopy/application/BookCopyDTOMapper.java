@@ -16,7 +16,7 @@ public interface BookCopyDTOMapper {
     BookCopy toDomain(BookCopyDTO bookCopyDTO);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "books", ignore = true)
+    @Mapping(target = "book", ignore = true)
     @Mapping(target = "loans", ignore = true)
     BookCopy toDomain(CreateBookCopyDTO createBookCopyDTO);
 
